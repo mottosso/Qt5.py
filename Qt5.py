@@ -2,7 +2,10 @@ import os
 import types
 import sys
 
+__version__ = "0.1.0"
+
 QT_VERBOSE = bool(os.getenv("QT_VERBOSE"))
+QT_PREFERRED_BINDING = os.environ.get("QT_PREFERRED_BINDING")
 QtCompat = types.ModuleType("QtCompat")
 
 
@@ -32,28 +35,36 @@ try:
 
 
 except ImportError:
-    from PyQt5 import (
-        QtWidgets,
-        QtCore,
-        QtGui,
-        QtQml,
-        QtQuick,
-    )
-
-    QtCore.Signal = QtCore.pyqtSignal
-    QtCore.Slot = QtCore.pyqtSlot
-    QtCore.Property = QtCore.pyqtProperty
-
-    from sip import wrapinstance, unwrapinstance
-    QtCompat.wrapInstance = wrapinstance
-    QtCompat.getCppPointer = unwrapinstance
-
     try:
-        from PyQt5 import uic
-        QtCompat.loadUi = uic.loadUi
-    except ImportError:
-        _log("uic not provided.")
+        from PyQt5 import (
+            QtWidgets,
+            QtCore,
+            QtGui,
+            QtQml,
+            QtQuick,
+        )
 
+        QtCore.Signal = QtCore.pyqtSignal
+        QtCore.Slot = QtCore.pyqtSlot
+        QtCore.Property = QtCore.pyqtProperty
+
+        from sip import wrapinstance, unwrapinstance
+        QtCompat.wrapInstance = wrapinstance
+        QtCompat.getCppPointer = unwrapinstance
+
+        try:
+            from PyQt5 import uic
+            QtCompat.loadUi = uic.loadUi
+        except ImportError:
+            _log("uic not provided.")
+
+    except ImportError:
+
+        # Used during tests and installers
+        if QT_PREFERRED_BINDING == "None":
+            _log("No binding found")
+        else:
+            raise
 
 __all__ = [
     "QtWidgets",
