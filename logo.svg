@@ -4,10 +4,7 @@
     <path d="M0.055,0.011C0.055,0.011 0.055,63.551 0.055,82.463L5.304,87.713C36.456,87.717 195.695,87.739 195.695,87.739C195.695,87.739 195.695,24.178 195.695,5.261L190.445,0.011C159.292,0.011 0.055,0.011 0.055,0.011Z" style="fill:rgb(70,201,89);"/>
     <g>
         <g transform="matrix(0.836845,0,0,0.836845,15.3835,59.1541)">
-            <text x="0px" y="0px" style="font-family:'Lato-Bold', 'Lato', sans-serif;font-weight:700;font-size:64.802px;fill:white;">Qt5.p</text>
-        </g>
-        <g transform="matrix(0.836845,0,0,0.836845,152.676,59.1541)">
-            <text x="0px" y="0px" style="font-family:'Lato-Bold', 'Lato', sans-serif;font-weight:700;font-size:64.802px;fill:white;">y</text>
+            <text x="0px" y="0px" style="font-family:'Lato-Bold', 'Lato', sans-serif;font-weight:700;font-size:64.802px;fill:white;">Qt5.py</text>
         </g>
     </g>
 </svg>
