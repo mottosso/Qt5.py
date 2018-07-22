@@ -1,8 +1,8 @@
 import os
-import types
 import sys
+import types
 
-__version__ = "0.1.0"
+__version__ = "0.2.0.b1"
 
 QT_VERBOSE = bool(os.getenv("QT_VERBOSE"))
 QT_PREFERRED_BINDING = os.environ.get("QT_PREFERRED_BINDING")
@@ -21,15 +21,17 @@ try:
         QtGui,
         QtQml,
         QtQuick,
+        QtMultimedia,
     )
 
     from shiboken2 import wrapInstance, getCppPointer
     QtCompat.wrapInstance = wrapInstance
     QtCompat.getCppPointer = getCppPointer
+
     try:
         from PySide2 import QtUiTools
-
         QtCompat.loadUi = QtUiTools.QUiLoader
+
     except ImportError:
         _log("QtUiTools not provided.")
 
@@ -42,6 +44,7 @@ except ImportError:
             QtGui,
             QtQml,
             QtQuick,
+            QtMultimedia,
         )
 
         QtCore.Signal = QtCore.pyqtSignal
@@ -72,5 +75,6 @@ __all__ = [
     "QtGui",
     "QtQml",
     "QtQuick",
+    "QtMultimedia",
     "QtCompat",
 ]
