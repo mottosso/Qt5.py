@@ -22,6 +22,7 @@ try:
         QtQml,
         QtQuick,
         QtMultimedia,
+        QtOpenGL,
     )
 
     from shiboken2 import wrapInstance, getCppPointer
@@ -45,6 +46,7 @@ except ImportError:
             QtQml,
             QtQuick,
             QtMultimedia,
+            QtOpenGL,
         )
 
         QtCore.Signal = QtCore.pyqtSignal
@@ -77,4 +79,5 @@ __all__ = [
     "QtQuick",
     "QtMultimedia",
     "QtCompat",
+    "QtOpenGL",
 ]
