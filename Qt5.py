@@ -2,7 +2,7 @@ import os
 import sys
 import types
 
-__version__ = "0.2.0.b1"
+__version__ = "0.2.0.b2"
 
 QT_VERBOSE = bool(os.getenv("QT_VERBOSE"))
 QT_PREFERRED_BINDING = os.environ.get("QT_PREFERRED_BINDING")
