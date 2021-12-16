@@ -22,6 +22,7 @@ try:
         QtQml,
         QtQuick,
         QtMultimedia,
+        QtMultimediaWidgets,
         QtOpenGL,
     )
 
@@ -46,6 +47,7 @@ except ImportError:
             QtQml,
             QtQuick,
             QtMultimedia,
+            QtMultimediaWidgets,
             QtOpenGL,
         )
 
@@ -78,6 +80,7 @@ __all__ = [
     "QtQml",
     "QtQuick",
     "QtMultimedia",
+    "QtMultimediaWidgets",
     "QtCompat",
     "QtOpenGL",
 ]
